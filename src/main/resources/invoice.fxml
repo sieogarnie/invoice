@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dg.invoice.app.invoice.InvoiceController">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="689.0" minHeight="10.0" prefHeight="689.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="1100.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #8899aa;" text="InvoiceDG" textFill="#ddeeff">
+                     <font>
+                        <Font name="Calibri Bold" size="48.0" />
+                     </font></Label>
+                  <ButtonBar prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #DDEEFF;" styleClass="primary">
+                    <buttons>
+                        <Button mnemonicParsing="false" onAction="#loadInvoice" styleClass="primary" text="Load">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                      <Button mnemonicParsing="false" onAction="#saveInvoice" styleClass="primary" text="Save">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                    </buttons>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
+                  </ButtonBar>
+               </children></HBox>
+            <TabPane minHeight="700.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+              <tabs>
+                <Tab closable="false" styleClass="nav-item" text="Invoice Data">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="470.0" layoutY="236.0" prefHeight="671.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label prefHeight="41.0" prefWidth="1128.0" style="-fx-background-color: #eee;" text="General information">
+                                             <font>
+                                                <Font name="Calibri" size="30.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </Label>
+                                          <GridPane prefHeight="150.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="30.0" prefWidth="275.0" text="Identifier:" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="19.0" prefHeight="30.0" prefWidth="275.0" text="Issued:" textAlignment="CENTER" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="67.0" prefHeight="30.0" prefWidth="275.0" text="Transaction date:" textAlignment="CENTER" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="67.0" prefHeight="30.0" prefWidth="275.0" text="Payment due:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="560.0" layoutY="67.0" prefHeight="30.0" prefWidth="275.0" text="Payment method:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <font>
+                                                      <Font size="18.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets right="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <ChoiceBox fx:id="cbPaymentMethod" prefHeight="25.0" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin></ChoiceBox>
+                                                <DatePicker fx:id="dpIssued" prefHeight="25.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin></DatePicker>
+                                                <DatePicker fx:id="dpTransactionDate" prefHeight="25.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin></DatePicker>
+                                                <DatePicker fx:id="dpPaymentDue" prefWidth="220.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin></DatePicker>
+                                                <TextField fx:id="txtId" prefWidth="200.0" GridPane.columnIndex="1">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                   </GridPane.margin></TextField>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </VBox>
+                                    <Label prefHeight="45.0" prefWidth="1131.0" style="-fx-background-color: #eee;" text="Parties information">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <GridPane prefHeight="450.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="366.0" text="Seller" GridPane.columnIndex="1">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="285.0" layoutY="24.0" prefHeight="45.0" prefWidth="366.0" text="Buyer" GridPane.columnIndex="3">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="285.0" layoutY="24.0" prefHeight="27.0" prefWidth="275.0" text="Name:" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="106.0" prefHeight="27.0" prefWidth="369.0" text="Address:" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="179.0" prefHeight="27.0" prefWidth="367.0" text="Postal Code:" GridPane.rowIndex="3">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="252.0" prefHeight="27.0" prefWidth="367.0" text="City:" GridPane.rowIndex="4">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="325.0" prefHeight="27.0" prefWidth="367.0" text="NIP:" GridPane.rowIndex="5">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="342.0" prefHeight="27.0" prefWidth="366.0" text="Bank Account Number" GridPane.rowIndex="6">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtSellerName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtBuyerName" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtSellerAddress" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtBuyerAddress" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtSellerPostalCode" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtBuyerPostalCode" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtSellerCity" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtBuyerCity" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtSellerNip" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtBuyerNip" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="txtSellerBankNum" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="79.0" prefHeight="27.0" prefWidth="275.0" text="Name:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="134.0" prefHeight="27.0" prefWidth="369.0" text="Address:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="189.0" prefHeight="27.0" prefWidth="367.0" text="Postal Code:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="244.0" prefHeight="27.0" prefWidth="367.0" text="City:" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="299.0" prefHeight="27.0" prefWidth="367.0" text="NIP:" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnLock" mnemonicParsing="false" onAction="#btnLockClicked" prefHeight="25.0" prefWidth="135.0" styleClass="primary" text="Validate and Lock" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                             <GridPane.margin>
+                                                <Insets left="70.0" right="70.0" />
+                                             </GridPane.margin>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </GridPane>
+                                 </children></VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Invoice Items">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="438.0" layoutY="200.0" prefHeight="660.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <TableView fx:id="tbItemView" prefHeight="600.0" prefWidth="200.0" styleClass="table-striped">
+                                      <columns>
+                                        <TableColumn fx:id="colNum" prefWidth="50.0" text="#" />
+                                        <TableColumn fx:id="colName" minWidth="361.0" prefWidth="450.0" text="Item Name" />
+                                          <TableColumn fx:id="colAmount" minWidth="20.0" prefWidth="100.0" text="Amount" />
+                                          <TableColumn fx:id="colNetPrice" minWidth="50.0" prefWidth="100.0" text="Net Price" />
+                                          <TableColumn fx:id="colTax" minWidth="50.0" prefWidth="100.0" text="Tax" />
+                                          <TableColumn fx:id="colDiscount" minWidth="50.0" prefWidth="100.0" text="Discount" />
+                                          <TableColumn fx:id="colGrossPrice" prefWidth="100.0" text="Gross Price" />
+                                      </columns>
+                                       <padding>
+                                          <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                                       </padding>
+                                    </TableView>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="840.0" text="Total:" textAlignment="RIGHT">
+                                                   <font>
+                                                      <Font size="19.0" />
+                                                   </font>
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <TextField fx:id="txtTotal" alignment="CENTER_RIGHT" editable="false" prefHeight="31.0" prefWidth="246.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                             </children>
+                                          </HBox>
+                                          <ButtonBar prefHeight="100.0" prefWidth="200.0">
+                                            <buttons>
+                                              <Button fx:id="brnAddItem" alignment="CENTER" mnemonicParsing="false" onAction="#btnAddItemClicked" styleClass="success" text="Add Item">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                            </buttons>
+                                             <padding>
+                                                <Insets bottom="20.0" right="50.0" />
+                                             </padding>
+                                          </ButtonBar>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
